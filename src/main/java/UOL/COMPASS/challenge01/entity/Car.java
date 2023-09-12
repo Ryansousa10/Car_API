@@ -1,13 +1,14 @@
 package UOL.COMPASS.challenge01.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
+@Data
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_chassi")
-    private Long id_chassi;
+    private Long chassiId;
 
     @Column(nullable = false)
     private String brand;
@@ -18,45 +19,8 @@ public class Car {
     @Column(nullable = false)
     private String color;
 
-    @Column(nullable = false)
+    @Column(name = "\"fabricationYear\"")
     private String fabricationYear;
-
-    public Long getId_chassi() {
-        return id_chassi;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getFabricationYear() {
-        return fabricationYear;
-    }
-
-    public void setFabricationYear(String fabricationYear) {
-        this.fabricationYear = fabricationYear;
-    }
-
 }
 
 

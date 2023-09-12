@@ -1,30 +1,24 @@
 package UOL.COMPASS.challenge01.dto;
+
+import lombok.Data;
+
+@Data
 public class CarResponseDTO {
-    private Long id_chassi;
+    private Long chassiId;
     private String brand;
+    private String color;
+    private String name;
+    private String fabricationYear;
 
-    public CarResponseDTO(Long id_chassi, String brand) {
-        this.id_chassi = id_chassi;
+    public CarResponseDTO(Long chassiId, String brand, String color, String name, String fabricationYear) {
+        this.chassiId = chassiId;
         this.brand = brand;
-
-    }
-
-    public Long getId_chassi() {
-        return id_chassi;
-    }
-
-    public void setId_chassi(Long id_chassi) {
-        this.id_chassi = id_chassi;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
+        this.color = color;
+        this.name = name;
+        this.fabricationYear = fabricationYear;
     }
 }
+
 //        CarResponseDTO:
 //
 //        Esta classe é outro DTO, mas é usada para representar a resposta da API após o registro de um carro ou ao buscar um carro por ID.

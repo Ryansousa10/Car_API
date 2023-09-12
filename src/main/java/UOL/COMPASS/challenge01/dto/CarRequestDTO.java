@@ -14,15 +14,13 @@ public class CarRequestDTO {
     @NotBlank(message = "Color is required")
     private String color;
 
-    @NotBlank(message = "Name is required")
-    private String name;
-
-    //        getters and setters
     @Getter
+    @NotBlank(message = "model is required")
+    private String model;
+
     @NotBlank(message = "Fabrication year is required")
     private String fabricationYear;
 }
-
 
 //        CarRequestDTO:
 //

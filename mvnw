@@ -53,7 +53,7 @@ fi
 cygwin=false;
 darwin=false;
 mingw=false
-case "$(uname)" in
+case "$(umodel)" in
   CYGWIN*) cygwin=true ;;
   MINGW*) mingw=true;;
   Darwin*) darwin=true
@@ -96,12 +96,12 @@ if [ -z "$JAVA_HOME" ]; then
     readLink=$(which readlink)
     if [ ! "$(expr "$readLink" : '\([^ ]*\)')" = "no" ]; then
       if $darwin ; then
-        javaHome="$(dirname "\"$javaExecutable\"")"
+        javaHome="$(dirmodel "\"$javaExecutable\"")"
         javaExecutable="$(cd "\"$javaHome\"" && pwd -P)/javac"
       else
         javaExecutable="$(readlink -f "\"$javaExecutable\"")"
       fi
-      javaHome="$(dirname "\"$javaExecutable\"")"
+      javaHome="$(dirmodel "\"$javaExecutable\"")"
       javaHome=$(expr "$javaHome" : '\(.*\)/bin')
       JAVA_HOME="$javaHome"
       export JAVA_HOME
@@ -175,7 +175,7 @@ log() {
   fi
 }
 
-BASE_DIR=$(find_maven_basedir "$(dirname "$0")")
+BASE_DIR=$(find_maven_basedir "$(dirmodel "$0")")
 if [ -z "$BASE_DIR" ]; then
   exit 1;
 fi
@@ -213,18 +213,18 @@ else
     if command -v wget > /dev/null; then
         log "Found wget ... using wget"
         [ "$MVNW_VERBOSE" = true ] && QUIET="" || QUIET="--quiet"
-        if [ -z "$MVNW_USERNAME" ] || [ -z "$MVNW_PASSWORD" ]; then
+        if [ -z "$MVNW_USERmodel" ] || [ -z "$MVNW_PASSWORD" ]; then
             wget $QUIET "$wrapperUrl" -O "$wrapperJarPath" || rm -f "$wrapperJarPath"
         else
-            wget $QUIET --http-user="$MVNW_USERNAME" --http-password="$MVNW_PASSWORD" "$wrapperUrl" -O "$wrapperJarPath" || rm -f "$wrapperJarPath"
+            wget $QUIET --http-user="$MVNW_USERmodel" --http-password="$MVNW_PASSWORD" "$wrapperUrl" -O "$wrapperJarPath" || rm -f "$wrapperJarPath"
         fi
     elif command -v curl > /dev/null; then
         log "Found curl ... using curl"
         [ "$MVNW_VERBOSE" = true ] && QUIET="" || QUIET="--silent"
-        if [ -z "$MVNW_USERNAME" ] || [ -z "$MVNW_PASSWORD" ]; then
+        if [ -z "$MVNW_USERmodel" ] || [ -z "$MVNW_PASSWORD" ]; then
             curl $QUIET -o "$wrapperJarPath" "$wrapperUrl" -f -L || rm -f "$wrapperJarPath"
         else
-            curl $QUIET --user "$MVNW_USERNAME:$MVNW_PASSWORD" -o "$wrapperJarPath" "$wrapperUrl" -f -L || rm -f "$wrapperJarPath"
+            curl $QUIET --user "$MVNW_USERmodel:$MVNW_PASSWORD" -o "$wrapperJarPath" "$wrapperUrl" -f -L || rm -f "$wrapperJarPath"
         fi
     else
         log "Falling back to using Java to download"

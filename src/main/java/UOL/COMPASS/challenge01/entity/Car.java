@@ -14,7 +14,7 @@ public class Car {
     private String brand;
 
     @Column(nullable = false)
-    private String name;
+    private String model;
 
     @Column(nullable = false)
     private String color;

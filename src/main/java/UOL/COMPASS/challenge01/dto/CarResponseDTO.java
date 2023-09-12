@@ -1,22 +1,13 @@
 package UOL.COMPASS.challenge01.dto;
 
 import lombok.Data;
-
 @Data
 public class CarResponseDTO {
     private Long chassiId;
     private String brand;
     private String color;
-    private String name;
+    private String model;
     private String fabricationYear;
-
-    public CarResponseDTO(Long chassiId, String brand, String color, String name, String fabricationYear) {
-        this.chassiId = chassiId;
-        this.brand = brand;
-        this.color = color;
-        this.name = name;
-        this.fabricationYear = fabricationYear;
-    }
 }
 
 //        CarResponseDTO:

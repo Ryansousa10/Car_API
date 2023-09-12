@@ -7,6 +7,18 @@ public class CarRequestDTO {
     @Pattern(regexp = "^(Ford|Chevrolet|BMW|Volvo)$", message = "Invalid brand")
     private String brand;
 
+    @NotBlank(message = "Color is required")
+    private String color;
+
+    @NotBlank(message = "Name is required")
+    private String name;
+
+    @NotBlank(message = "Fabrication year is required")
+    private String fabrication_year;
+
+//        getters and setters
+
+
     public String getBrand() {
         return brand;
     }
@@ -15,12 +27,34 @@ public class CarRequestDTO {
         this.brand = brand;
     }
 
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getFabricationYear() {
+        return fabrication_year;
+    }
+
+    public void setFabricationYear(String fabrication_year) {
+        this.fabrication_year = fabrication_year;
+    }
 }
 
 
-//   1 - O campo brand deve ser obrigatório (não em branco) - Isso é garantido pela anotação `@NotBlank`.
-
-//   2 - O campo brand deve aceitar apenas marcas específicas (Ford, Chevrolet, BMW, Volvo) - Isso é validado pela anotação @Pattern,
-//       que usa uma expressão regular para garantir que o valor do campo corresponda a uma das marcas especificadas.
-
-//      O CarRequestDTO.java serve como um validador de dados de entrada de acordo com as regras estabelecidas no desafio.
+//        CarRequestDTO:
+//
+//        Esta classe é um DTO (Data Transfer Object) usado para receber dados de entrada da solicitação HTTP para registrar um novo carro.
+//        Contém campos que representam os atributos de um carro, como marca, cor, nome e ano de fabricação.
+//        Inclui anotações de validação para garantir que os dados de entrada atendam aos critérios estabelecidos, como marca válida.

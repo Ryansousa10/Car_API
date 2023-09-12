@@ -2,22 +2,27 @@ package UOL.COMPASS.challenge01.entity;
 
 import jakarta.persistence.*;
 
-
 @Entity
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "id_chassi")
+    private Long id_chassi;
 
     @Column(nullable = false)
     private String brand;
 
-    public Long getId() {
-        return id;
-    }
+    @Column(nullable = false)
+    private String name;
 
-    public void setId(Long id) {
-        this.id = id;
+    @Column(nullable = false)
+    private String color;
+
+    @Column(nullable = false)
+    private String fabricationYear;
+
+    public Long getId_chassi() {
+        return id_chassi;
     }
 
     public String getBrand() {
@@ -27,7 +32,33 @@ public class Car {
     public void setBrand(String brand) {
         this.brand = brand;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getFabricationYear() {
+        return fabricationYear;
+    }
+
+    public void setFabricationYear(String fabricationYear) {
+        this.fabricationYear = fabricationYear;
+    }
+
 }
+
 
 
 //        1- Anotações JPA: A classe Car é anotada com @Entity, indicando que ela é uma entidade gerenciada pelo JPA

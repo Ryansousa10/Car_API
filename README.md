@@ -48,7 +48,7 @@ The project is configured to use a local MySQL database. Make sure to update the
 **Make sure your MySQL username and password are set to: "root"**
 
 <h2></h2Requirements>Requirements</h2>
-- Java 8 or higher.
+- Java 17.
 - Maven.
 - Configured MySQL database.
 

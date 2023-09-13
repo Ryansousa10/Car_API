@@ -1,7 +1,9 @@
 <h1 align="center"> SpringBoot_Challenge01_RyanSousa</h1>
 <img src="https://user-images.githubusercontent.com/74038190/240906093-9be4d344-6782-461a-b5a6-32a07bf7b34e.gif">
 
-<br></br>
+<h2><strong>Functionality:</strong></h2>
+<p>The main functionality of the project is to allow car registration and the retrieval of car information based on a unique identifier, the car chassis. To achieve this, the project is divided into several classes and components:</p>
+
 <h2>Project Structure</h2>
 
 - 🏎️ **CarController** The CarController class is a Spring controller that handles HTTP requests related to cars. It has two main methods: registerCar: Handles POST requests to register new cars. It performs input validations, such as brand validation, and calls the service to save the car in the database. getCarByIdChassi: Handles GET requests to retrieve information about a car based on the chassis ID. It calls the service to fetch the car from the database.
@@ -19,6 +21,13 @@
 - 🏎️ **InvalidBrandException** The InvalidBrandException class is a custom exception that is thrown when the car's brand is invalid. It extends RuntimeException and contains information about the invalid brand.
 
 - 🏎️ **CarRepository** The CarRepository interface is a Spring Data JPA interface that extends JpaRepository. It provides ready-made methods for accessing the database related to the Car entity. No implementation is required as Spring Data JPA takes care of it.
+
+<h2><strong>Problem solved:</strong></h2>
+<p>The project solves the problem of managing information about cars and allows the registration of these cars in a database. It also offers the ability to retrieve specific information about a car based on the chassis, which can be useful in various situations such as checking details of a car for insurance purposes, maintenance history, among others.</p>
+
+<p>Additionally, the project addresses input validation, ensuring that the data entered is valid, including validating the car brand. This helps maintain data integrity in the database and provides a secure and reliable API for recording and retrieving car information.</p>
+
+<p>In summary, the project offers a solution for managing car information through a Spring Boot API, focusing on data validation and efficient retrieval of information based on the car's chassis.</p>
 
 
 <h3 align="center">Languages and Tools:</h3>

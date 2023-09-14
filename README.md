@@ -14,9 +14,13 @@
 
 - 🏎️ **CarResponseDTO** The CarResponseDTO class is another DTO but is used to represent the API response after registering a car or when retrieving a car by ID. It contains fields for the chassis ID and the car's brand, which are the main data returned.
 
-- 🏎️ **CarMapper** The CarMapper class is responsible for mapping DTO objects to entities and vice versa. It contains methods to map CarRequestDTO objects to Car and Car objects to CarResponseDTO.(The CarMapper class is responsible for mapping DTO objects to entities and vice versa. It contains methods to map CarRequestDTO objects to Car and Car objects to CarResponseDTO.)
+- 🏎️ **CarMapper** The CarMapper class has the function of mapping DTO objects (Data Transfer Objects) to entities and vice versa. It plays an important role in converting data between formats used in the presentation layer (DTOs) and those used in the service layer (entities).
+     <p><strong>The main functions of the CarMapper class:</strong></p>
+  
+     <p>- Mapping from CarRequestDTO to Car</p>
+     <p>- Car Mapping for CarResponseDTO</p>
 
-- 🏎️ **CarService** The CarService class is the underlying service that performs the business logic related to cars. The registerCar method receives a Car object as input, validates the data (brand and non-null fields), and saves the car to the database. The getCarByIdChassi method allows you to fetch a car from the database based on the chassis ID. Helper methods isValidBrand and validateCarFields assist in the necessary checks and validations.(The CarService class is the underlying service that performs the business logic related to cars. The registerCar method receives a Car object as input, validates the data (brand and non-null fields), and saves the car to the database. The getCarByIdChassi method allows you to fetch a car from the database based on the chassis ID. Helper methods isValidBrand and validateCarFields assist in the necessary checks and validations.)
+- 🏎️ **CarService** The CarService class is the underlying service that performs the business logic related to cars. The registerCar method receives a Car object as input, validates the data (brand and non-null fields), and saves the car to the database. The getCarByChassiId method allows you to fetch a car from the database based on the chassis ID. Helper methods isValidBrand and validateCarFields assist in the necessary checks and validations.
 
 - 🏎️ **InvalidBrandException** The InvalidBrandException class is a custom exception that is thrown when the car's brand is invalid. It extends RuntimeException and contains information about the invalid brand.
 
@@ -57,4 +61,4 @@ The project is configured to use a local MySQL database. Make sure to update the
 The API has the following endpoints:
 
 <p><strong>POST /cars:</strong> Registers a new car.</p>
-<p><strong>GET /cars/{idChassi}:</strong> Retrieves information about a car based on the chassis ID.</p>
+<p><strong>GET /cars/{chassiId}:</strong> Retrieves information about a car based on the chassis ID.</p>

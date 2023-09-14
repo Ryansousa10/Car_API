@@ -41,10 +41,9 @@
 <strong>To run the project locally, follow these steps:</strong><br></br>
 
 <p>1- Clone the GitHub repository to your local machine.</p>
-<p>2- Ensure you have Java and Maven installed.</p>
-<p>3- Open the terminal in the project's root folder.</p>
-<p>4- Run the command mvn spring-boot:run to start the application.</p>
-<p>5- The application will be available at http://localhost:8080.</p>
+<p>2- Ensure you have Java, Maven and MySQL Server installed.</p>
+<p>3- Run the Challenge01Application.java file.</p>
+<p>4- The application will be available at http://localhost:8080.</p>
 
 <h2></h2Database>Database Configuration</h2>
 The project is configured to use a local MySQL database. Make sure to update the database settings in the <strong>application.yaml</strong> file to match your configuration.

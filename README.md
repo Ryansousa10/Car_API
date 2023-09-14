@@ -24,6 +24,8 @@
 
 - 🏎️ **InvalidBrandException** The InvalidBrandException class is a custom exception that is thrown when the car's brand is invalid. It extends RuntimeException and contains information about the invalid brand.
 
+- 🏎️ **InvalidChassiIdException** The InvalidChassiIdException class is a custom exception that extends RuntimeException. It is used to represent specific proposals related to invalid chassis IDs. This exception's primary function is to signal that an error related to a specific chassis ID has occurred, typically when a chassis ID not found is requested or found to be in an invalid state.
+
 - 🏎️ **CarRepository** The CarRepository interface is a Spring Data JPA interface that extends JpaRepository. It provides ready-made methods for accessing the database related to the Car entity. No implementation is required as Spring Data JPA takes care of it.
 
 <h2><strong>Problem solved:</strong></h2>

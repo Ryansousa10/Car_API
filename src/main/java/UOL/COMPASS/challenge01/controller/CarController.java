@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/cars")
@@ -19,15 +20,15 @@ public class CarController {
     private final CarService carService;
     private final CarMapper carMapper;
 
-    @PostMapping
-    public ResponseEntity<?> registerCar(@Valid @RequestBody CarRequestDTO requestDTO) {
+    public ResponseEntity<Object> registerCar(@Valid @RequestBody CarRequestDTO requestDTO) {
         try {
             Car car = carMapper.mapToEntity(requestDTO);
             Car savedCar = carService.registerCar(car);
             CarResponseDTO responseDTO = carMapper.mapToResponse(savedCar);
             return ResponseEntity.status(HttpStatus.CREATED).body(responseDTO);
         } catch (InvalidBrandException e) {
-            return ResponseEntity.badRequest().body("Invalid brand: " + e.getBrand());
+            // Lançar uma exceção ResponseStatusException com status 404
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Invalid brand: " + e.getBrand());
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Error: " + e.getMessage());
         }

@@ -21,7 +21,6 @@ public class CarService {
         validateCarFields(car);
         return carRepository.save(car);
     }
-
     public Car getCarByChassiId(Long chassiId) {
         return carRepository.findById(chassiId).orElse(null);
     }

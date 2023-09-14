@@ -3,7 +3,6 @@ package UOL.COMPASS.challenge01.service;
 import UOL.COMPASS.challenge01.entity.Car;
 import UOL.COMPASS.challenge01.repository.CarRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service

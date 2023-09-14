@@ -33,9 +33,9 @@ public class CarController {
         }
     }
 
-    @GetMapping("/{idChassi}")
-    public ResponseEntity<CarResponseDTO> getCarByIdChassi(@PathVariable Long idChassi) {
-        Car car = carService.getCarByIdChassi(idChassi);
+    @GetMapping("/{chassiId}")
+    public ResponseEntity<CarResponseDTO> getCarByChassiId(@PathVariable Long chassiId) {
+        Car car = carService.getCarByChassiId(chassiId);
         if (car == null) {
             return ResponseEntity.notFound().build();
         }
@@ -50,6 +50,6 @@ public class CarController {
         Possui dois métodos principais:
         registerCar: Lida com solicitações POST para registrar novos carros. Realiza validações na entrada, como a marca,
         e chama o serviço para salvar o carro no banco de dados.
-        getCarByIdChassi: Lida com solicitações GET para recuperar informações de um carro com base no ID do chassi. Chama
+        getCarByChassiId: Lida com solicitações GET para recuperar informações de um carro com base no ID do chassi. Chama
         o serviço para buscar o carro no banco de dados.
  */

@@ -52,14 +52,3 @@ public class CarController {
         }
     }
 }
-
-
-/*        CarController:
-
-        Esta classe é um controlador Spring que lida com as solicitações HTTP relacionadas a carros.
-        Possui dois métodos principais:
-        registerCar: Lida com solicitações POST para registrar novos carros. Realiza validações na entrada, como a marca,
-        e chama o serviço para salvar o carro no banco de dados.
-        getCarByChassiId: Lida com solicitações GET para recuperar informações de um carro com base no ID do chassi. Chama
-        o serviço para buscar o carro no banco de dados.
- */

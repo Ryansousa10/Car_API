@@ -10,5 +10,4 @@ public class InvalidChassiIdException extends RuntimeException {
         super(chassiId);
         this.chassiId = chassiId;
     }
-
 }

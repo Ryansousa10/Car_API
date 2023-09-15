@@ -20,6 +20,7 @@ public class CarService {
         validateCarFields(car);
         return carRepository.save(car);
     }
+
     public Car getCarByChassiId(Long chassiId) {
         return carRepository.findById(chassiId).orElse(null);
     }
@@ -34,11 +35,3 @@ public class CarService {
         }
     }
 }
-
-//      CarService:
-//
-//      Esta classe é o serviço subjacente que realiza a lógica de negócios relacionada a carros.
-//      O método registerCar recebe um objeto Car como entrada, valida os dados (marca e campos não nulos)
-//      e salva o carro no banco de dados.
-//      O método getCarByChassiId permite buscar um carro no banco de dados com base no ID do chassi.
-//      Os métodos isValidBrand e validateCarFields auxiliam nas verificações e validações necessárias.

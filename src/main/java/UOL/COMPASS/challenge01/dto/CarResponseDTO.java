@@ -9,8 +9,3 @@ public class CarResponseDTO {
     private String model;
     private String fabricationYear;
 }
-
-//        CarResponseDTO:
-//
-//        Esta classe é outro DTO, mas é usada para representar a resposta da API após o registro de um carro ou ao buscar um carro por ID.
-//        Contém campos para o ID do chassi e a marca do carro, que são os principais dados retornados.

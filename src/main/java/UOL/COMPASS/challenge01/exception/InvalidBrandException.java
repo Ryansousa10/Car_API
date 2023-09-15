@@ -10,5 +10,4 @@ public class InvalidBrandException extends RuntimeException {
         super("Invalid brand: " + brand);
         this.brand = brand;
     }
-
 }
